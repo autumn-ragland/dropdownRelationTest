@@ -1,0 +1,23 @@
+@model ExampleProject.Models.SampleModel
+<h1>Add New Sample</h1>
+
+@using (@Html.BeginForm("addSample", "Example"))
+{
+    <div class="form-group">
+        @Html.LabelFor(sample => sample.sampleInteger)
+        @Html.TextBoxFor(sample => sample.sampleInteger, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(sample => sample.sampleString)
+        @Html.TextBoxFor(sample => sample.sampleString, new { @class="form-control" })
+    </div>
+    <div class="form-group"> 
+        @Html.DropDownListFor(sample => sample.sampleEnumType, new SelectList(Enum.GetValues(typeof(SampleModel.sampleType))), "Select Type")
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(sample => sample.sampleBucketID)
+        @Html.DropDownListFor(sample => sample.sampleBucketID, @Model.buckets, new { @class = "form-control"})
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}  

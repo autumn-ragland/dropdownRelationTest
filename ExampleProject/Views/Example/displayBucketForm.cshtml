@@ -1,0 +1,12 @@
+@model ExampleProject.Models.BucketModel
+<h1>Add New Bucket</h1>
+
+@using (@Html.BeginForm("addBucket", "Example"))
+{
+    <div class="form-group">
+        @Html.LabelFor(bucket => bucket.desc)
+        @Html.TextBoxFor(bucket => bucket.desc, new { @class="form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}  

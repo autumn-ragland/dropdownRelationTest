@@ -1,9 +1,9 @@
 @model ExampleProject.DAO.ExampleDbContext
 
-
 @foreach (SampleModel sample in @Model.Samples)
 {
-    <p>@sample.id</p>
+    <p>Sample ID : @sample.id</p>
+    <a asp-area="" asp-controller="Example" asp-action="sampleDetails" asp-route-sampleID="@sample.id">Sample Details</a>
 } 
 
 

@@ -1,5 +1,27 @@
 @model ExampleProject.Models.SampleModel
 
-@Model.id
-@Model.itemList.Count
+<p>Sample ID : @Model.id </p>
+<p>Sample Integer : @Model.sampleInteger </p>
+<p>Sample String : @Model.sampleString </p>
+<p>Sample Type : @Model.sampleEnumType </p>
+@if(@Model.sampleBucketID > 0)
+{
+    <p>Bucket : @Model.sampleBucketID</p>
+}
+<p> Items : @Model.itemList.Count</p>
+
+@foreach(ItemModel item in @Model.itemList)
+{
+    <hr/>
+    <p>Item ID : @item.id</p>
+    <p>Item title : @item.title</p>
+
+}
+
+<a asp-area="" asp-controller="Example" asp-action="displayItemForm" asp-route-sampleID="@Model.id">Add Item</a>
+
+
+
+
+
 

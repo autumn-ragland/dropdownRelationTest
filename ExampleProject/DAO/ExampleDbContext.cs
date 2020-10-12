@@ -8,5 +8,6 @@ namespace ExampleProject.DAO
         {
         }
         public DbSet<SampleModel> Samples {get;set;}
+        public DbSet<BucketModel> Buckets {get;set;}
     }
 }
