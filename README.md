@@ -1,10 +1,12 @@
-# Using and Populating Drop-down Menus with Razor Template HTML Templates in a .NET MVC Application
+# Using and Populating Drop-down Menus with Razor Template HTML Helpers in a .NET MVC Application
 
 ### Model Structure 
+```
 Sample Model
 |___ Many Items : List of Items
 |
 |___ One Bucket : Bucket ID
+```
 Item Model : ONLY IN RELATION TO SAMPLE (includes sample model ID)
 Bucket Model : Separate model but optionally linked via bucket id in sample model
 
@@ -13,7 +15,7 @@ Bucket Model : Separate model but optionally linked via bucket id in sample mode
 - Create Sample Object with Bucket Object
 - View All Sample Objects
 - View Sample Object details
-- Add Item Object to Sample Object
+- Add Item Objects to Sample Object
 - Create Bucket Object
 - View All Bucket Objects
 
