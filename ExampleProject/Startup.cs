@@ -26,8 +26,8 @@ namespace ExampleProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-    // add db context
-    services.AddDbContext<ExampleDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultDbConnection")));
+            // add db context
+            services.AddDbContext<ExampleDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultDbConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

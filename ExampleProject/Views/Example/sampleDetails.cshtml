@@ -6,7 +6,10 @@
 <p>Sample Type : @Model.sampleEnumType </p>
 @if(@Model.sampleBucketID > 0)
 {
-    <p>Bucket : @Model.sampleBucketID</p>
+    <a asp-area="" asp-controller="Example" asp-action="bucketDetails" asp-route-bucketID="@Model.sampleBucketID">
+            <button class="btn-primary">Bucket ID : @Model.sampleBucketID</button>
+    </a>
+
 }
 <p> Items : @Model.itemList.Count</p>
 

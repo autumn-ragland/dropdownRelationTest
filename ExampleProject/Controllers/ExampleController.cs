@@ -89,7 +89,7 @@ namespace ExampleProject.Controllers
             _context.SaveChanges();
 
             // return Content($"Added Item {newItem.id} to Sample {foundSample.id}"); // sanity check
-            return RedirectToAction("listAll");
+            return RedirectToAction("sampleDetails", new { sampleID = foundSample.id });
         }
         // display form to add item to sample
         public IActionResult displayItemForm(int sampleID)
@@ -117,6 +117,12 @@ namespace ExampleProject.Controllers
         public IActionResult listAllBuckets()
         {
             return View(_context);
+        }
+        // display bucket details
+        public IActionResult bucketDetails(int bucketID)
+        {
+            BucketModel foundBucket = _context.Buckets.FirstOrDefault(b => b.id == bucketID);
+            return View(foundBucket);
         }
     }
 }
